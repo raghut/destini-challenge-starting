@@ -51,7 +51,7 @@ class _StoryPageState extends State<StoryPage> {
                 child: FlatButton(
                   onPressed: () {
                     //Choice 1 made by user.
-                    handleChoiceBtnClick(1);
+                    handleChoiceBtnClick(2);
                   },
                   color: Colors.red,
                   child: Text(
@@ -71,7 +71,7 @@ class _StoryPageState extends State<StoryPage> {
                   visible: storyBrain.getChoice2().isNotEmpty,
                   child: FlatButton(
                     onPressed: () {
-                      handleChoiceBtnClick(2);
+                      handleChoiceBtnClick(1);
                     },
                     color: Colors.blue,
                     child: Text(

@@ -49,11 +49,21 @@ class StoryBrain {
     return storyData[_curQuestion].choice2;
   }
 
-  void nextQuestion(int choice) {
-    if (_curQuestion + choice < storyData.length - 1) {
-      _curQuestion *= _curQuestion;
-      _curQuestion += choice;
-    } else {
+  void nextQuestion(int choiceNumber) {
+    if (choiceNumber == 1 && _curQuestion == 0) {
+      _curQuestion = 2;
+    } else if (choiceNumber == 2 && _curQuestion == 0) {
+      _curQuestion = 1;
+    } else if (choiceNumber == 1 && _curQuestion == 1) {
+      _curQuestion = 2;
+    } else if (choiceNumber == 2 && _curQuestion == 1) {
+      _curQuestion = 3;
+    } else if (choiceNumber == 1 && _curQuestion == 2) {
+      _curQuestion = 5;
+    } else if (choiceNumber == 2 && _curQuestion == 2) {
+      _curQuestion = 4;
+    }
+    else if (_curQuestion == 3 || _curQuestion == 4 || _curQuestion == 5) {
       _curQuestion = 0;
     }
   }
